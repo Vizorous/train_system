@@ -18,11 +18,12 @@ const char *password = "Vikum31415";
 boolean isWithinRange = false;
 
 //route id init
-int routeId = 1000, stopId = 1000, nextRouteId, nextStopId;
+double defaultLat = 6.8143542, defaultLon = 79.9712693,defaultRouteId=1000,defaultStopId=1000;
+int routeId = defaultRouteId, stopId = defaultStopId, nextRouteId, nextStopId;
 
 //waypoint init
 
-double waypointLat = 6.8143542, waypointLon = 79.9712693, nextWaypointLat, nextWaypointLon;
+double waypointLat = defaultLat, waypointLon =defaultLon, nextWaypointLat, nextWaypointLon;
 
 // date and time
 String gpsTime, gpsDate;
@@ -192,7 +193,7 @@ void loop()
 }
 
 void handleReset() {
-  waypointLat = 6.8143542, waypointLon = 79.9712693;
+  waypointLat = defaultLat, waypointLon =defaultLon;
   routeId = 1000, stopId = 1000;
   isWithinRange = false;
   Serial.println("reset");

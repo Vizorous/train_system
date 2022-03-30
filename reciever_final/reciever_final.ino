@@ -56,6 +56,8 @@ void loop()
 {
 
   server.handleClient(); //Handling of incoming requests
+
+  
   while (SoftSerial.available() > 0)
   {
     Serial.print(SoftSerial.read());
